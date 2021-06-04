@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <title>www.learning.com</title>
+        <link rel="stylesheet" href="IntoToPython.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class = "nav-bar">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="hor-line"></div>
+        <div class = "inner-blog-heading">
+            <p>Looping Concept in Python</p>
+        </div>
+        <div class = "blog-content">
+
+            <h2>What is Loop?</h2>
+            <p>
+                In computer science, a loop is a programming structure that repeats a sequence of 
+                instructions until a specific condition is met. 
+                Programmers use loops to cycle through values, add sums of numbers, repeat functions, and many other things.
+            </p>
+            <p>
+                Loops are supported by all modern programming languages, though their implementations and syntax may differ. 
+                Two of the most common types of loops are the while loop and the for loop.
+            </p>
+            <h3>for Loop</h3>
+            <p>
+                The for loop in Python is used to iterate over a sequence (list, tuple, string) or other iterable objects. 
+                Iterating over a sequence is called traversal.
+            </p>
+            <p>Syntex : </p>
+            <pre class="code-content">
+                <code>
+for val in sequence:
+    Body of for
+                </code>
+            </pre>
+            <p>
+                Here, val is the variable that takes the value of the item inside the sequence on each iteration.
+                Loop continues until we reach the last item in the sequence. 
+                The body of for loop is separated from the rest of the code using indentation.
+            </p>
+            <pre class="code-content">
+                <code>
+# Program to find the sum of all numbers stored in a list
+
+# List of numbers
+numbers = [6, 5, 3, 8, 4, 2, 5, 4, 11]
+
+# variable to store the sum
+sum = 0
+
+# iterate over the list
+for val in numbers:
+    sum = sum+val
+
+print("The sum is", sum)
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+The sum is 48
+                </code>
+            </pre>
+            <p>
+                The range() function
+            </p>
+            <p>
+                We can generate a sequence of numbers using range() function. 
+                range(10) will generate numbers from 0 to 9 (10 numbers).
+                We can also define the start, stop and step size as range(start, stop,step_size). 
+                step_size defaults to 1 if not provided.
+            </p>
+            <p>
+                We can use the range() function in for loops to iterate through a sequence of numbers. 
+                It can be combined with the len() function to iterate through a sequence using indexing. Here is an example.
+            </p>
+            <pre class="code-content">
+                <code>
+# Program to iterate through a list using indexing
+
+genre = ['pop', 'rock', 'jazz']
+                    
+# iterate over the list using index
+
+for i in range(len(genre)):
+    print("I like", genre[i])
+                </code>
+            </pre>
+            <pre class="code-content"> 
+                <code>
+I like pop
+I like rock
+​I like jazz
+                </code>
+            </pre>
+            <h3>while Loop</h3>
+            <p>
+                The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true.
+                We generally use this loop when we don't know the number of times to iterate beforehand.
+            </p>
+            <p>Syntax :</p>
+            <pre class="code-content">
+                <code>
+while test_expression:
+    Body of while
+                </code>
+            </pre>
+            <p>
+                In the while loop, test expression is checked first. The body of the loop is entered only if the test_expression evaluates to True. 
+                After one iteration, the test expression is checked again. 
+                This process continues until the test_expression evaluates to False.
+            </p>
+            <pre class="code-content">
+                <code>
+# Program to add natural
+# numbers up to 
+# sum = 1+2+3+...+n
+
+# To take input from the user,
+# n = int(input("Enter n: "))
+
+n = 10
+
+# initialize sum and counter
+sum = 0
+i = 1
+
+while i <= n:
+    sum = sum + i
+    i = i+1    # update counter
+
+# print the sum
+print("The sum is", sum)
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+Enter n: 10
+The sum is 55
+                </code>
+            </pre>
+            <p>
+                In the above program, the test expression will be True as long as our counter variable i is 
+                less than or equal to n (10 in our program).
+                We need to increase the value of the counter variable in the body of the loop. This is very important (and mostly forgotten). 
+                Failing to do so will result in an infinite loop (never-ending loop).
+            </p>
+            <p>while loop with else :</p>
+            <p>
+                The else part is executed if the condition in the while loop evaluates to False.
+                The while loop can be terminated with a break statement. 
+                In such cases, the else part is ignored. Hence, a while loop's else part runs if no break occurs and the condition is false.
+            </p>
+            <pre class="code-content">
+                <code>
+'''Example to illustrate
+the use of else statement
+with the while loop'''
+
+counter = 0
+
+while counter < 3:
+    print("Inside loop")
+    counter = counter + 1
+else:
+    print("Inside else")
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+Inside loop
+Inside loop
+Inside loop
+Inside else
+                </code>
+            </pre>
+            <p>
+                Here, we use a counter variable to print the string Inside loop three times.
+                On the fourth iteration, the condition in while becomes False. Hence, the else part is executed.
+            </p>
+            <div class = "Quiz Button">
+                <a href="samplequiz2.html"><input type="button" value="Take a Quiz" class="button"></a>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,249 @@
+<html>
+    <head>
+        <title>www.learning.com</title>
+        <link rel="stylesheet" href="IntoToPython.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class = "nav-bar">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="hor-line"></div>
+        <div class = "inner-blog-heading">
+            <p>Data Structure in Python</p>
+        </div>
+        <div class = "blog-content">
+            <h2>Data Structure</h2> 
+            <p>
+                Data structures are basically just that - they are structures which can hold some data together.
+                In other words, they are used to store a collection of related data.
+            </p>  
+            <p>
+                There are four built-in data structures in Python - list, tuple, dictionary and set. 
+                We will see how to use each of them and how they make life easier for us.
+            </p>
+            <h3>List</h3>
+            <p>
+                A list is a data structure that holds an ordered collection of items i.e. you can store a sequence of items in a list. 
+                This is easy to imagine if you can think of a shopping list where you have a list of items to buy, 
+                except that you probably have each item on a separate line in your shopping list whereas in Python you put commas in between them.
+            </p>
+            <p>
+                The list of items should be enclosed in square brackets so that Python understands that you are specifying a list. 
+                Once you have created a list, you can add, remove or search for items in the list. 
+                Since we can add and remove items, 
+                we say that a list is a mutable data type i.e. this type can be altered.
+            </p>
+            <pre class="code-content">
+                <code>
+# This is my shopping list
+shoplist = ['apple', 'mango', 'carrot', 'banana']
+
+print('I have', len(shoplist), 'items to purchase.')
+
+print('These items are:', end=' ')
+for item in shoplist:
+    print(item, end=' ')
+
+print('\nI also have to buy rice.')
+shoplist.append('rice')
+print('My shopping list is now', shoplist)
+
+print('I will sort my list now')
+shoplist.sort()
+print('Sorted shopping list is', shoplist)
+
+print('The first item I will buy is', shoplist[0])
+olditem = shoplist[0]
+del shoplist[0]
+print('I bought the', olditem)
+print('My shopping list is now', shoplist)
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+I have 4 items to purchase.
+These items are: apple mango carrot banana 
+I also have to buy rice.
+My shopping list is now ['apple', 'mango', 'carrot', 'banana', 'rice']
+I will sort my list now
+Sorted shopping list is ['apple', 'banana', 'carrot', 'mango', 'rice']
+The first item I will buy is apple
+I bought the apple
+My shopping list is now ['banana', 'carrot', 'mango', 'rice']
+                </code>
+            </pre>
+            <h3>Tuple</h3>
+            <p>
+                A Python tuple is a collection type data structure which is immutable by design and holds a sequence of heterogeneous elements.
+                It functions almost like a Python list but with the following distinctions.
+                Tuples store a fixed set of elements and don’t allow changes whereas the list has the provision to update its content.
+                The list uses square brackets for opening and closing whereas, and a tuple has got parentheses for the enclosure.
+            </p>
+            <p>
+                You can create a tuple by placing a sequence of desired elements separated using commas inside a pair of round brackets (), i.e., parentheses.
+            </p>
+            <pre class="code-content">
+                <code>
+# create an empty tuple
+py_tuple = ()
+print("A blank tuple:", py_tuple)
+
+# create a tuple without using round brackets
+py_tuple = 33, 55, 77
+print("A tuple set without parenthesis:", py_tuple, "type:", type(py_tuple))
+
+# create a tuple of numbers
+py_tuple = (33, 55, 77)
+print("A tuple of numbers:", py_tuple)
+
+# create a tuple of mixed numbers
+# such as integer, float, imaginary
+py_tuple = (33, 3.3, 3+3j)
+print("A tuple of mixed numbers:", py_tuple)
+
+# create a tuple of mixed data types
+# such as numbers, strings, lists
+py_tuple = (33, "33", [3, 3])
+print("A tuple of mixed data types:", py_tuple)
+
+# create a tuple of tuples
+# i.e. a nested tuple
+py_tuple = (('x', 'y', 'z'), ('X', 'Y', 'Z'))
+print("A tuple of tuples:", py_tuple)
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+# output
+A blank tuple: ()
+A tuple set without parenthesis: (33, 55, 77) type: <class 'tuple'>
+A tuple of numbers: (33, 55, 77)
+A tuple of mixed numbers: (33, 3.3, (3+3j))
+A tuple of mixed data types: (33, '33', [3, 3])
+A tuple of tuples: (('x', 'y', 'z'), ('X', 'Y', 'Z'))
+                </code>
+            </pre>
+            <h3>Set</h3>
+            <p>
+                A set is an unordered collection of items. Every set element is unique (no duplicates) and must be immutable (cannot be changed).
+                However, a set itself is mutable. We can add or remove items from it.
+                Sets can also be used to perform mathematical set operations like union, intersection, symmetric difference, etc.
+            </p>
+            <p>
+                A set is created by placing all the items (elements) inside curly braces {}, separated by comma, or by using the built-in set() function.
+                It can have any number of items and they may be of different types (integer, float, tuple, string etc.). But a set cannot have mutable elements like lists,
+                sets or dictionaries as its elements.
+            </p>
+            <pre class="code-content">
+                <code>
+# set cannot have duplicates
+# Output: {1, 2, 3, 4}
+my_set = {1, 2, 3, 4, 3, 2}
+print(my_set)
+
+# we can make set from a list
+# Output: {1, 2, 3}
+my_set = set([1, 2, 3, 2])
+print(my_set)
+
+# set cannot have mutable items
+# here [3, 4] is a mutable list
+# this will cause an error.
+
+my_set = {1, 2, [3, 4]}
+# initialize a with {}
+a = {}
+
+# check data type of a
+print(type(a))
+
+# initialize a with set()
+a = set()
+
+# check data type of a
+print(type(a))
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+{1, 2, 3, 4}
+{1, 2, 3}
+Traceback (most recent call last):
+  File "(string)", line 15, in (module)
+    my_set = {1, 2, [3, 4]}
+TypeError: unhashable type: 'list'
+(class 'dict')
+(class 'set')
+                </code>
+            </pre>
+            <h3>Dictionary</h3>
+            <p>
+                Dictionary in Python is an unordered collection of data values, used to store data values like a map, 
+                which unlike other Data Types that hold only single value as an element, Dictionary holds key:value pair.
+                Key value is provided in the dictionary to make it more optimized.
+            </p>
+            <p>
+                In Python, a Dictionary can be created by placing sequence of elements within curly {} braces, separated by ‘comma’. 
+                Dictionary holds a pair of values, 
+                one being the Key and the other corresponding pair element being its Key:value. 
+                Values in a dictionary can be of any datatype and can be duplicated, whereas keys can’t be repeated and must be immutable.
+            </p>
+            <pre class="code-content">
+                <code>
+# Creating a Dictionary 
+# with Integer Keys
+Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+print("\nDictionary with the use of Integer Keys: ")
+print(Dict)
+  
+# Creating a Dictionary 
+# with Mixed keys
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]}
+print("\nDictionary with the use of Mixed Keys: ")
+print(Dict)
+
+# Creating an empty Dictionary
+Dict = {}
+print("Empty Dictionary: ")
+print(Dict)
+  
+# Creating a Dictionary
+# with dict() method
+Dict = dict({1: 'Geeks', 2: 'For', 3:'Geeks'})
+print("\nDictionary with the use of dict(): ")
+print(Dict)
+  
+# Creating a Dictionary
+# with each item as a Pair
+Dict = dict([(1, 'Geeks'), (2, 'For')])
+print("\nDictionary with each item as a pair: ")
+print(Dict)
+                </code>
+            </pre>
+            <pre class="code-content">
+                <code>
+Dictionary with the use of Integer Keys: 
+{1: 'Geeks', 2: 'For', 3: 'Geeks'}
+
+Dictionary with the use of Mixed Keys: 
+{1: [1, 2, 3, 4], 'Name': 'Geeks'}
+
+Empty Dictionary: 
+{}
+
+Dictionary with the use of dict(): 
+{1: 'Geeks', 2: 'For', 3: 'Geeks'}
+
+Dictionary with each item as a pair: 
+{1: 'Geeks', 2: 'For'}
+                </code>
+            </pre>
+            <div class = "Quiz Button">
+                <a href="samplequiz1.html"><input type="button" value="Take a Quiz" class="button"></a>
+            </div>
+        </div>
+    </body>
+</html>

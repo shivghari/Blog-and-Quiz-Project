@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>www.Learning.com</title>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div class = "nav-bar">
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="hor-line"></div>
+        <div class="main-heading">
+            <div class = "start-content">
+                <div class = "img-cont">
+                    <img src="about_img.png" alt="start-img" class="start-img">
+                </div>
+                <div class="sen">
+                    <p id="username"></p>
+                    <p>Here good ideas find you.</p>
+                    <input type="submit" class="btns" id="signin" value="Sign in" onclick="getData()" />
+                </div>
+            </div>
+        </div>
+        <div class = "blog-list-heading">
+            <p>Here Some Basic Topics Of Python</p>
+        </div>
+        <div class = "blog-list">
+            <div class = "blog-box" id="box1">
+                <a href="IntoToPython.html"><p class = "blog-heading">Introduction to the Python</p></a>
+                <p class = "blog-description">Here We Study about the Python Programming langauge.
+                    The full-overview of the Python is given in the Blog.
+                    The characteristics of Python and take a look to the applications
+                    of Python.  
+                </p>
+            </div>
+
+            <div class = "blog-box" id="box2">
+                <a href="Datastruc.html"><p class = "blog-heading">Data Structures in Python</p></a>
+                <p class = "blog-description">These is the key concept of the every programming langauge.
+                    Python have some incredibly powerfull Data structure that can help to make a
+                    code tiny and readable. In this Blog we are going to study string, list, tuple,
+                    dictionaries in brief.
+                </p>
+            </div>
+
+            <div class = "blog-box" id="box3">
+                <a href="looping.html"><p class = "blog-heading">Conditioning and Looping</p></a>
+                <p class = "blog-description">The Condition statement and looping statements are discuss
+                    in this bolg. These are the most frequently used concepts of Python and more importantly 
+                    they are very simple and easy to use and often done great work in code.  
+                </p>
+            </div>
+        </div>
+        <div class="quiz-part">
+            <div>
+                <img src="Boy.png" alt="quiz-img" class="quiz-img" height="600px" width="250px">
+            </div>
+            <div class="quiz-link">
+                <div>
+                <a href="sampleqiz.html"><button type="submit" class="btns">Introduction : Python Quiz</button></a><br>
+                </div>
+                <div class="space">
+                <a href="samplequiz1.html"><button type="submit" class="btns">Data Structure : Python Quiz</button></a><br>
+                </div>
+                <div class="space">
+                <a href="samplequiz2.html"><button type="submit" class="btns">Looping : Python Quiz</button></a><br>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (localStorage.getItem("username") !== null) {
+                localStorage.setItem("user", localStorage.getItem("username"));
+                document.getElementById("username").innerHTML = `Hello, ${localStorage.getItem("user")}`;
+                //document.getElementById("signin").classList.add('hide');
+                localStorage.removeItem('username');
+                document.getElementById('signin').value = "Sign out";
+            } else if(localStorage.getItem("user") !== null) {
+                document.getElementById("username").innerHTML = `Hello, ${localStorage.getItem("user")}`;
+                //document.getElementById("signin").classList.add('hide');
+            }
+        </script>
+    </body>
+</html>
